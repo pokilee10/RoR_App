@@ -24,7 +24,7 @@ class TicketsController < ApplicationController
 
 
   def send_to_slack(ticket)
-    slack_webhook_url = "https://hooks.slack.com/services/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"
+    slack_webhook_url = ENV['SLACK_WEBHOOK_URL']
     message = {
       text: "New Ticket Received:\n Name: #{ticket.name}\n Email: #{ticket.email}\n Description: #{ticket.description}"
     }
