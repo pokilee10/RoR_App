@@ -55,3 +55,11 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'net-http'
+
+group :development do
+  gem 'capistrano', '~> 3.14'
+  gem 'capistrano-rails', '~> 1.6'
+  gem 'capistrano-rbenv', '~> 2.2'
+  gem 'capistrano-bundler', '~> 1.6'
+  gem 'capistrano3-puma', '~> 5.0'
+end

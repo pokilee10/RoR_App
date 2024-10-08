@@ -33,7 +33,7 @@ class TicketsController < ApplicationController
   end
 
   # def send_to_slack(ticket)
-  #   slack_webhook_url = "https://hooks.slack.com/services/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"
+  #   slack_webhook_url = "https://hooks.slack.com/services/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"
   #   message = {
   #     text: "New Ticket Received:\n Name: #{ticket.name}\n Email: #{ticket.email}\n Description: #{ticket.description}"
   #   }
@@ -55,7 +55,7 @@ class TicketsController < ApplicationController
   # end
 
   def send_to_slack(ticket)
-    slack_webhook_url = "https://hooks.slack.com/services/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"
+    slack_webhook_url = "https://hooks.slack.com/services/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"
     message = {
       text: "New Ticket Received:\n Name: #{ticket.name}\n Email: #{ticket.email}\n Description: #{ticket.description}"
     }
