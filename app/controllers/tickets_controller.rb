@@ -40,6 +40,7 @@ class TicketsController < ApplicationController
   
     response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
       http.request(request)
+      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
     end
   
     # Kiểm tra xem phản hồi có thành công không
