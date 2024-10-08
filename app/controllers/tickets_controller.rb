@@ -3,16 +3,6 @@ class TicketsController < ApplicationController
     @ticket = Ticket.new
   end
 
-  # def create
-  #   @ticket = Ticket.new(ticket_params)
-  #   if @ticket.save
-  #     send_to_slack(@ticket)
-  #     redirect_to root_path, notice: "Ticket was successfully created."
-  #   else
-  #     render :new
-  #   end
-  # end
-
   def create
     @ticket = Ticket.new(ticket_params)
     if @ticket.save
@@ -32,30 +22,9 @@ class TicketsController < ApplicationController
     params.require(:ticket).permit(:name, :email, :description)
   end
 
-  # def send_to_slack(ticket)
-  #   slack_webhook_url = "https://hooks.slack.com/services/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"
-  #   message = {
-  #     text: "New Ticket Received:\n Name: #{ticket.name}\n Email: #{ticket.email}\n Description: #{ticket.description}"
-  #   }
-
-  #   require 'net/http'
-  #   require 'uri'
-  #   require 'json'
-
-  #   uri = URI.parse(slack_webhook_url)
-  #   request = Net::HTTP::Post.new(uri)
-  #   request.content_type = "application/json"
-  #   request.body = message.to_json
-
-  #   response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
-  #     http.request(request)
-  #   end
-
-  #   response
-  # end
 
   def send_to_slack(ticket)
-    slack_webhook_url = "https://hooks.slack.com/services/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"
+    slack_webhook_url = "https://hooks.slack.com/services/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"
     message = {
       text: "New Ticket Received:\n Name: #{ticket.name}\n Email: #{ticket.email}\n Description: #{ticket.description}"
     }
